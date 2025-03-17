@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="Description" content="I Don't know yet">
@@ -8,7 +9,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CWA Help Desk Appointment</title>
 </head>
+
 <body>
-    
+    <img src="images/logo.png" alt="Swinburne Logo">
+    <h1>CWA Help Desk Appointment</h1>
+    <p>The Help Desk is located in ATC260. Open 10:30 to 19:00 Monday to Friday</p>
+    <p>Check backboard for when CWA tutors will be there.</p>
+    <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <fieldset>
+            <legend>Student Details</legend>
+            <p>
+                <label for="student_id">Student ID:</label>
+                <input type="text" name="student_id" id="student_id" pattern="[0-9]{7,10}" required>
+            </p>
+            <div style="float: left;">
+                <label for="given_name">Given name: </label>
+                <input type="text" name="given_name" id="given_name" pattern="[A-Za-z]{+}" required>
+            </div>
+            <div style="float: left;">
+                <label for="family_name">Family Name: </label>
+                <input type="text" name="family_name" id="family_name" pattern="[A-Za-z]{+}" required>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Your unit</legend>
+            <div>
+                <p style="float: left;">
+                    <label for="COS10011">COS10011</label>
+                    <input type="radio" name="unit" id="COS10011" required>
+                </p>
+                <p style="float: left;">
+                    <label for="COS10011">COS60004</label>
+                    <input type="radio" name="unit" id="COS60004">
+                <p style="float: left;">
+                    <label for="COS10011">COS60007</label>
+                    <input type="radio" name="unit" id="COS60007">
+                </p>
+            </div>
+            <p style="clear: both;">
+                <label for="tutor">Your Tutor</label>
+                <select name="tutor" id="tutor" required>
+                    <option value="">Please Select</option>
+                    <option value="Nick">Nick</option>
+                    <option value="Josh">Josh</option>
+                    <option value="Nikola">Nikola</option>
+                </select>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Issue</legend>
+            <p style="float: left">
+                <label for="HTML">HTML:</label>
+                <input type="checkbox" name="issue_lang[]" id="HTML">
+            </p>
+            <p style="float: left">
+                <label for="CSS">CSS:</label>
+                <input type="checkbox" name="issue_lang[]" id="CSS">
+            </p>
+            <p style="float: left">
+                <label for="JavaScript">JavaScript:</label>
+                <input type="checkbox" name="issue_lang[]" id="JavaScript">
+            </p>
+            <p style="float: left">
+                <label for="PHP">PHP:</label>
+                <input type="checkbox" name="issue_lang[]" id="PHP">
+            </p>
+            <p style="float: left">
+                <label for="MySQL">MySQL:</label>
+                <input type="checkbox" name="issue_lang[]" id="MySQL">
+            </p>
+            <p style="clear: both">Description of Issue</p>
+            <textarea name="issue" id="issue" rows="5" cols="40" placeholder="Write description of your problem here..." required></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Prefferred Date/Time</legend>
+            <p>
+                <label for="date">Date:</label>
+                <input type="text" name="date" id="date" placeholder="dd/mm/yyyy" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
+            </p>
+            <p>
+                <label for="time">Time:</label>
+                <input type="text" name="time" id="time" placeholder="00:00" pattern="^\d{2}:\d{2}$" required>
+            </p>
+        </fieldset>
+        <input type="submit" value="Book">
+        <input type="reset" value="Reset form">
+    </form>
 </body>
+
 </html>
